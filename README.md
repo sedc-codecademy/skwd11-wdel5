@@ -3,14 +3,15 @@
 ## FRONTEND PART CONFIG 
 
 ## Init Angular project
-1. Install Angular CLI - `npm install -g @angular/cli`
-2. Create new project - `ng new client`
+1. Install Angular CLI - `npm install -g @angular/cli` (used only the first time)
+2. `ng version` to check if it's installed
+3. Create new project - `ng new client`
    1. Would you like to add Angular routing? - Y
    2. Which stylesheet format would you like to use? - SCSS
    3. Would you like to share pseudonymous usage data about this project with the Angular Team
       at Google (not important) - N
-3. Run app `ng serve`
-4. Open project in browser - http://localhost:4200
+4. Run app `ng serve`
+5. Open project in browser - http://localhost:4200
 
 ## Install Angular Material
 1. Install Angular Material - `ng add @angular/material`
