@@ -11,10 +11,10 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
     // used for components and directives
     AppComponent,
-    HomeComponent,
   ],
   imports: [
     HeaderComponent,
+    HomeComponent,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

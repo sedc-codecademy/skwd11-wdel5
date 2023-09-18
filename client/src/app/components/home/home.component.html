@@ -1,4 +1,12 @@
-<h1>home component</h1>
+<mat-grid-list cols="3" rowHeight="500px">
+    <mat-grid-tile *ngFor="let pizza of pizzas">
+        <app-pizza-card [pizza]="pizza"></app-pizza-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<!-- <div *ngIf="pizzas?.length">
+    we have pizzas available
+</div> -->
 
 <!-- <p>{{description}}</p>
 

@@ -1,0 +1,9 @@
+<mat-card *ngIf="!!pizza">
+    <mat-card-header>{{pizza.name}}</mat-card-header>
+    <img mat-card-image height="300px" width="300px" [src]="pizza.image" [alt]="pizza.name" />
+    <mat-card-content>
+        <mat-chip *ngFor="let ingredient of pizza.ingredients">
+            {{ingredient}}
+        </mat-chip>
+    </mat-card-content>
+</mat-card>

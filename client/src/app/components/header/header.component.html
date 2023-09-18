@@ -1,16 +1,15 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button>
+    <button mat-icon-button routerLink="/">
         <mat-icon>local_pizza</mat-icon>
     </button>
-    <span>
+    <span class="logo" routerLink="/">
         Pizza App
     </span>
 
-    <a href="">Kitchen</a>
-    <a href="">Saved Pizzas</a>
-    <a href="">Login</a>
-    <a href="">Register</a>
-    <a href="">Logout</a>
-
+    <a mat-button routerLink="/pizza-maker">Kitchen</a>
+    <a mat-button href="">Saved Pizzas</a>
+    <a mat-button href="">Login</a>
+    <a mat-button href="">Register</a>
+    <a mat-button href="">Logout</a>
 
 </mat-toolbar>
