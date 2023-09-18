@@ -1,3 +1,5 @@
+// This is used to style header component. Using logo class we can style logo image, but it wouldn't affect other components. Each component could have its own style file with the same class names.
+
 .logo {
     cursor: pointer;
     margin-right: 10px;

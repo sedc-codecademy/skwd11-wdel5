@@ -4,12 +4,9 @@
     </mat-grid-tile>
 </mat-grid-list>
 
-<!-- <div *ngIf="pizzas?.length">
-    we have pizzas available
-</div> -->
-
-<!-- <p>{{description}}</p>
-
-<button (click)="onClick()">
-    Click me! (Clicked: {{counter}})
-</button> -->
+<!--mat-grid-list, mat-grid-tile: https://material.angular.io/components/grid-list/overview -->
+<!-- *ngFor: https://angular.io/api/common/NgFor -->
+<!-- ngFor is a directive that is used to replicate the "for of" loop from JS to the Angular Component Template (HTML). It iterates and recreated the element where it's used -->
+<!-- let pizza of pizzas: let is a keyword that declares a variable. pizza is the name of the variable. pizzas is the array that is being iterated -->
+<!-- [pizza]="pizza" is a property binding. It binds the pizza property of the PizzaCardComponent to the pizza variable of the ngFor loop. [TEXT_HERE] should be same as the @Input() property name in the AppPizzaComponent -->
+<!-- app-pizza-card is "calling/using" the PizzaCardComponent in the HomeComponent -->

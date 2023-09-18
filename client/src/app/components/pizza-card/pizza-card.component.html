@@ -1,9 +1,22 @@
 <mat-card *ngIf="!!pizza">
-    <mat-card-header>{{pizza.name}}</mat-card-header>
-    <img mat-card-image height="300px" width="300px" [src]="pizza.image" [alt]="pizza.name" />
+    <mat-card-header>{{ pizza.name }}</mat-card-header>
+    <img
+        mat-card-image
+        height="300px"
+        width="300px"
+        [src]="pizza.image"
+        [alt]="pizza.name"
+    />
     <mat-card-content>
         <mat-chip *ngFor="let ingredient of pizza.ingredients">
-            {{ingredient}}
+            {{ ingredient }}
         </mat-chip>
     </mat-card-content>
 </mat-card>
+
+<!-- {{NAME_OF_PROPERTY_FROM_COMPONENT}} is syntax used by Angular to show the value from the component in the template -->
+<!-- *ngIf is an Angular directive that replicated the JS if statement. If the passed value (in this case "!!pizza") is true it will load mat-card, it it's false it wont -->
+<!-- [src] is property binding to an existing attribute (src is an attribute to img). Same goes for [alt]. When we are binding, the value ([NAME_OF_ATTRIBUTE]="VALUE" is NOT used as a simple string, rather as the value is has -->
+<!-- *ngFor is an Angular directive that replicated the JS for loop. It will loop through the array pizza.ingredients and for each element it will create a mat-chip with the value of the element -->
+<!-- mat-card, mat-card-content: https://material.angular.io/components/card/overview -->
+<!-- mat-chip: https://material.angular.io/components/chips/overview -->
