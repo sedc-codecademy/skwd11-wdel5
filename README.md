@@ -19,7 +19,7 @@
 
 ## Install Angular Material
 1. Install Angular Material - `ng add @angular/material`
-2. Choose a prebuilt theme name (ex. the first one), or "custom" for a custom theme
+2. Choose a prebuilt theme name (ex. the first one), or "custom" for a custom theme (custom requires additional setup with SCSS variables https://material.angular.io/guide/theming)
 3. Set up global Angular Material typography styles - Y
 4.  Include the Angular animations module? - Include and enable animations
 
