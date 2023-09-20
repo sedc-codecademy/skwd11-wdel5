@@ -14,10 +14,15 @@ import { PizzaService } from '../../services/pizza.service'
 })
 export class PizzaCardsComponent implements OnInit {
     pizzas: Pizza[] = []
+    breakpoint: number = 3
 
     constructor(private pizzaService: PizzaService) {}
 
     ngOnInit() {
         this.pizzas = this.pizzaService.defaultPizzas
+    }
+
+    onResize(event: any) {
+        this.breakpoint = Math.floor(event.target.innerWidth / 320)
     }
 }

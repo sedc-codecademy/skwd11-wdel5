@@ -1,0 +1,9 @@
+<h1>
+    Ingredients:
+</h1>
+
+<mat-selection-list>
+    <mat-list-option *ngFor="let ingredient of ingredients" [value]="ingredient">
+        {{ingredient}}
+    </mat-list-option>
+</mat-selection-list>

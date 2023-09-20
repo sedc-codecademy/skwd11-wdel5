@@ -1,0 +1,24 @@
+mat-card-actions {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card {
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper {
+    padding: 30px;
+}
+
+h1 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: gray;
+    font-weight: 300;
+}

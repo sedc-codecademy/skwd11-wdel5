@@ -1,1 +1,14 @@
-<p>pizza-maker works!</p>
+<mat-stepper>
+    <mat-step>
+        <ng-template matStepLabel>Choose ingredients</ng-template>
+        <app-ingredients />
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Preview order</ng-template>
+        <app-preview-order />
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Checkout</ng-template>
+        <app-checkout />
+    </mat-step>
+</mat-stepper>
