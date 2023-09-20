@@ -13,12 +13,13 @@
    2. Which stylesheet format would you like to use? - SCSS
    3. Would you like to share pseudonymous usage data about this project with the Angular Team
       at Google (not important) - N
-7. Run app `ng serve`
-8. Open project in browser - http://localhost:4200
+7. Navigate to newly created folder for project `cd client` (if you used a different name than client, change "client" with the name of the folder that was created while using `ng new <THE_NAME>`      
+8. Run app `npm start`
+9. Open project in browser - http://localhost:4200
 
 ### Install Angular Material
 1. Install Angular Material - `ng add @angular/material`
-2. Choose a prebuilt theme name (ex. the first one), or "custom" for a custom theme
+2. Choose a prebuilt theme name (ex. the first one), or "custom" for a custom theme (custom requires additional setup with SCSS variables https://material.angular.io/guide/theming)
 3. Set up global Angular Material typography styles - Y
 4. Include the Angular animations module? - Include and enable animations
 
