@@ -1,1 +1,16 @@
-<p>selected-ingredients works!</p>
+<h1>
+    Selected ingredients:
+</h1>
+
+<mat-list role="list">
+    <div class="list-item-wrapper" *ngFor="let ingredient of selectedIngredients">
+        <mat-list-item role="listitem">
+            {{ingredient}}
+        </mat-list-item>
+        <div class="ingredients-action-btns">
+            <button mat-mini-fab color="warn" (click)="onDeleteIngredient(ingredient)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-list>

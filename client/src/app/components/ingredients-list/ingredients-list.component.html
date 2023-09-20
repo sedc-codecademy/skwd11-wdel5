@@ -2,8 +2,9 @@
     Ingredients:
 </h1>
 
-<mat-selection-list>
-    <mat-list-option *ngFor="let ingredient of ingredients" [value]="ingredient">
+<mat-selection-list (selectionChange)="onSelect($event)">
+    <mat-list-option *ngFor="let ingredient of ingredients" [value]="ingredient"
+        [selected]="selectedIngredients.includes(ingredient)">
         {{ingredient}}
     </mat-list-option>
 </mat-selection-list>
