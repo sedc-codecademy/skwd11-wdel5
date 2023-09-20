@@ -1,8 +1,8 @@
-# Build pizza app! with ANGULAR, .NET7 and POSTGREQL 
+# Build pizza app! with ANGULAR, .NET7 and POSTGRESQL
 
-## FRONTEND PART CONFIG 
+## FRONTEND PART CONFIG
 
-## Init Angular project
+### Init Angular project
 1. Install Node JS - https://nodejs.org/en/download/ (used only the first time) [LTS version]
 2. Confirm installation - `node -v` and `npm -v` should return a value (ex. 18.17.1 and 6.14.15)
 3. Install Angular CLI - `npm install -g @angular/cli` (used only the first time)
@@ -16,13 +16,13 @@
 7. Run app `ng serve`
 8. Open project in browser - http://localhost:4200
 
-## Install Angular Material
+### Install Angular Material
 1. Install Angular Material - `ng add @angular/material`
 2. Choose a prebuilt theme name (ex. the first one), or "custom" for a custom theme
 3. Set up global Angular Material typography styles - Y
-4.  Include the Angular animations module? - Include and enable animations
+4. Include the Angular animations module? - Include and enable animations
 
-## Using Angular CLI
+### Using Angular CLI
 1. Create component - `ng generate component components/<NAME_OF_COMPONENT> --standalone`
 2. Create service - `ng generate service services/<NAME_OF_SERVICE>`
 3. Create guard - `ng generate guard guards/<NAME_OF_GUARD>`
@@ -30,9 +30,14 @@
 5. Create directive - `ng generate directive directives/<NAME_OF_DIRECTIVE>`
 6. skip tests (this is added to each of the previous commands to prevent creating unnecessary .spec files) - `--skip-tests`
 
-## Useful links
+### Useful links
 - https://angular.io/
 - https://material.angular.io/
+
+### Useful VS Code Extensions (Angular related)
+- AutoImport https://marketplace.visualstudio.com/items?itemName=steoates.autoimport
+- Angular Language Service https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
+
 
 _____________________________________________________________
 ## BACKEND PART CONFIG 
