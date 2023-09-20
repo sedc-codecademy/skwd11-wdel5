@@ -5,6 +5,8 @@
     height: 100%;
     padding: 20px;
 
+    // selecting all direct child elements of .wrapper
+    // .wrapper > *
     & > * {
         width: 350px;
         display: flex;
@@ -12,10 +14,10 @@
         align-items: center;
     }
 
+    // selecting the first direct child element of .wrapper
+    // .wrapper > * {}:first-child
     & > *:first-child {
-        border-right: 1px solid rgba(0,0,0,0.3);
+        border-right: 1px solid rgba(0, 0, 0, 0.3);
         margin-right: 16px;
     }
 }
-
-// .wrapper > * {}

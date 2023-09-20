@@ -16,14 +16,15 @@ import { Ingredient } from '../../types/enums/ingredient.enum'
     ],
 })
 export class IngredientsComponent {
-    ingredients: Ingredient[] = []
+    ingredients: Ingredient[] = [] // Main source of truth for ingredients. This represents the ingredients that have been selected by the user.
 
     handleSelectIngredients(ingredients: Ingredient[]) {
-        console.log(ingredients)
+        // upon selecting an ingredient, add it to the list of ingredients
         this.ingredients = ingredients
     }
 
     handleDeleteIngredient(ingredient: Ingredient) {
+        // upon deleting an ingredient, remove it from the list of ingredients
         this.ingredients = this.ingredients.filter((i) => i !== ingredient)
     }
 }

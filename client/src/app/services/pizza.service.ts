@@ -3,8 +3,9 @@ import { Pizza } from '../types/interfaces/pizza.interface'
 import { Injectable } from '@angular/core'
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root', // This means that the service will be available in the whole application. It's deprecated, and will be set to 'root' as default in the following version of Angular.
 })
+// An Angular Service is an object (class) that can be used to share data between components.
 export class PizzaService {
     defaultPizzas: Pizza[] = [
         {

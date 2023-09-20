@@ -1,5 +1,25 @@
 <div class="wrapper">
-    <app-ingredients-list (onSelectIngredients)="handleSelectIngredients($event)" [selectedIngredients]="ingredients" />
-    <app-selected-ingredients (handleDeleteIngredient)="handleDeleteIngredient($event)"
-        [selectedIngredients]="ingredients" />
+    <!--  left column -->
+    <app-ingredients-list
+        (onSelectIngredients)="handleSelectIngredients($event)"
+        [selectedIngredients]="ingredients"
+    />
+    <!-- right column -->
+    <app-selected-ingredients
+        (handleDeleteIngredient)="handleDeleteIngredient($event)"
+        [selectedIngredients]="ingredients"
+    />
 </div>
+
+<!-- [selectedIngredients]="ingredients"  pass selected ingredients to child component -->
+<!-- selectedIngredients is an @Input() in the IngredientsListComponent -->
+<!-- (onSelectIngredients)="handleSelectIngredients($event)" - listen to event from IngredientsListComponent -->
+<!-- onSelectIngredients is an @Output() in the IngredientsListComponent -->
+<!-- handleSelectIngredients is a method in the IngredientsComponent -->
+
+<!-- selectedIngredients is an @Input() in the SelectedIngredientsComponent -->
+<!-- (handleDeleteIngredient)="handleDeleteIngredient($event)" - listen to event from SelectedIngredientsComponent -->
+<!-- handleDeleteIngredient is an @Output() in the SelectedIngredientsComponent -->
+<!-- handleDeleteIngredient is a method in the SelectedIngredientsComponent -->
+
+<!-- $event is the Angular syntax for passing the event parameter -->

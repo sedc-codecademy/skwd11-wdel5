@@ -1,16 +1,24 @@
-<h1>
-    Selected ingredients:
-</h1>
+<h1>Selected ingredients:</h1>
 
 <mat-list role="list">
-    <div class="list-item-wrapper" *ngFor="let ingredient of selectedIngredients">
+    <div
+        class="list-item-wrapper"
+        *ngFor="let ingredient of selectedIngredients"
+    >
         <mat-list-item role="listitem">
-            {{ingredient}}
+            {{ ingredient }}
         </mat-list-item>
         <div class="ingredients-action-btns">
-            <button mat-mini-fab color="warn" (click)="onDeleteIngredient(ingredient)">
+            <button
+                mat-mini-fab
+                color="warn"
+                (click)="onDeleteIngredient(ingredient)"
+            >
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
     </div>
 </mat-list>
+
+<!-- mat-list, mat-list-item: https://material.angular.io/components/list/overview -->
+<!-- mat-icon-button, mat-icon: https://material.angular.io/components/icon/overview -->
