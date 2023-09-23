@@ -2,16 +2,33 @@
     <div class="container">
         <h1>Your order:</h1>
         <mat-list>
-            <mat-list-item *ngFor="let pizza of activeOrder$ | async">
+            <mat-list-item *ngFor="let pizza of activeOrder$ | async; let i = index">
                 <span matListItemTitle>
-                    {{pizza.name}}
+                    <ng-container *ngIf="!showTitleInput; else titleInputContainer">
+                        {{pizza.name}}
+                        <button mat-icon-button matTooltip="Add custom title" (click)="showPizzaTitleInput()">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </ng-container>
+                    <ng-template #titleInputContainer>
+                        <mat-form-field>
+                            <mat-label>Add custom title</mat-label>
+                            <input matInput type="text" [formControl]="pizzaTitle" />
+                            <button matIconSuffix mat-icon-button (click)="saveTitle(pizza.id)">
+                                <mat-icon>save</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </ng-template>
                 </span>
                 <span matListItemLine>
-                    Size: {{pizza.size | normalizeEnum}} | Ingredients: {{pizza.ingredients.join(', ')}}
+                    Size: {{pizza.size | normalizeEnum}} | Ingredients: {{pizza.ingredients | normalizeEnum}}
                 </span>
                 <span matListItemLine>
                     Price: {{pizza.price | currency: 'EUR': true}}
                 </span>
+                <button mat-icon-button color="warn" (click)="onDeletePizza(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </mat-list-item>
         </mat-list>
 

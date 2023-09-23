@@ -6,6 +6,11 @@
             {{ ingredient | normalizeEnum }}
         </mat-chip>
     </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-mini-fab color="primary" (click)="selectPizza()">
+            <mat-icon>local_pizza</mat-icon>
+        </button>
+    </mat-card-actions>
 </mat-card>
 
 <!-- <pre>

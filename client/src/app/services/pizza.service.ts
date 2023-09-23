@@ -18,7 +18,34 @@ export class PizzaService {
         this.activeOrder.next(order)
     }
 
+    private selectedIngredients: BehaviorSubject<Ingredient[]> =
+        new BehaviorSubject<Ingredient[]>([])
+
+    selectedIngredients$: Observable<Ingredient[]> =
+        this.selectedIngredients.asObservable()
+
+    updateSelectedIngredients(ingredients: Ingredient[]): void {
+        this.selectedIngredients.next(ingredients)
+    }
+
     constructor() {}
+
+    updatePizzaTitle(id: number, name: string) {
+        const order = this.activeOrder.getValue()
+        const index = order.findIndex((p) => p.id === id)
+        order[index].name = name
+        this.updateActiveOrder(order)
+    }
+
+    submitOrder() {
+        console.log('Submitting order', this.activeOrder.getValue())
+    }
+
+    deletePizzaFromOrder(index: number) {
+        const order = this.activeOrder.getValue().splice(index, 1)
+
+        this.updateActiveOrder(order)
+    }
 
     defaultPizzas: Pizza[] = [
         {

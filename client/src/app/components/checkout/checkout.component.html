@@ -1,1 +1,15 @@
-<p>checkout works!</p>
+<div class="wrapper">
+    <div class="container">
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <span matIconPrefix>
+                <mat-icon>home</mat-icon>
+            </span>
+            <input type="text" matInput placeholder="Ex. Partizanska 11b, Skopje, Macedonia" [formControl]="address">
+        </mat-form-field>
+
+        <button [disabled]="address.invalid" mat-raised-button color="primary" (click)="onSubmitOrder()">
+            Make order
+        </button>
+    </div>
+</div>

@@ -5,6 +5,9 @@ import { MatCardModule } from '@angular/material/card'
 import { MatChipsModule } from '@angular/material/chips'
 import { HotPizzaDirective } from '../../directives/hot-pizza.directive'
 import { NormalizeEnumPipe } from 'src/app/pipes/normalize-enum.pipe'
+import { MatIconModule } from '@angular/material/icon'
+import { PizzaService } from 'src/app/services/pizza.service'
+import { Router } from '@angular/router'
 
 @Component({
     selector: 'app-pizza-card',
@@ -15,6 +18,7 @@ import { NormalizeEnumPipe } from 'src/app/pipes/normalize-enum.pipe'
         MatChipsModule,
         HotPizzaDirective,
         NormalizeEnumPipe,
+        MatIconModule,
     ],
     templateUrl: './pizza-card.component.html',
     styleUrls: ['./pizza-card.component.scss'],
@@ -22,4 +26,16 @@ import { NormalizeEnumPipe } from 'src/app/pipes/normalize-enum.pipe'
 export class PizzaCardComponent {
     // Input property to receive the pizza object from the parent component. It is undefined by default or when no value is passed from the parent component.
     @Input() pizza: Pizza | undefined
+
+    constructor(
+        private pizzaService: PizzaService,
+        private router: Router
+    ) {}
+
+    selectPizza() {
+        this.pizzaService.updateSelectedIngredients(
+            this.pizza?.ingredients ?? []
+        )
+        this.router.navigate(['/pizza-maker'])
+    }
 }

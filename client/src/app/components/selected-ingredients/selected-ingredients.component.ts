@@ -20,6 +20,7 @@ import { PizzaSize } from 'src/app/types/enums/pizza-size.enum'
 import { MatStepper } from '@angular/material/stepper'
 import { Pizza } from '../../types/interfaces/pizza.interface'
 import { calculatePizzaPrice } from 'src/app/helpers/calculate-price.helper'
+import { Subscription } from 'rxjs'
 
 @Component({
     selector: 'app-selected-ingredients',
@@ -47,6 +48,7 @@ export class SelectedIngredientsComponent
 
     size: PizzaSize = PizzaSize.MEDIUM
     activeOrder: Pizza[] = []
+    subscription: Subscription = new Subscription()
 
     constructor(
         private pizzaService: PizzaService,
@@ -77,7 +79,9 @@ export class SelectedIngredientsComponent
                 price: calculatePizzaPrice(this.size, this.selectedIngredients),
             },
         ])
-        this.matStepper.next()
+        setTimeout(() => {
+            this.matStepper.next()
+        })
     }
 
     savePizzaAndMakeAnother() {
@@ -109,9 +113,11 @@ export class SelectedIngredientsComponent
         // It's used to do things that need to be done after the COMPONENT is initialized like making API calls, etc.
         // console.log('ON INIT', this.selectedIngredients)
 
-        this.pizzaService.activeOrder$.subscribe((order: Pizza[]) => {
-            this.activeOrder = order
-        })
+        this.subscription = this.pizzaService.activeOrder$.subscribe(
+            (order: Pizza[]) => {
+                this.activeOrder = order
+            }
+        )
     }
 
     ngOnChanges() {
@@ -130,5 +136,6 @@ export class SelectedIngredientsComponent
         // Lifecycle method 5. This will only be called once right before the COMPONENT is destroyed.
         // It's used to clean up any things that need to be cleaned up.
         console.log('NG ON DESTROY')
+        this.subscription.unsubscribe()
     }
 }

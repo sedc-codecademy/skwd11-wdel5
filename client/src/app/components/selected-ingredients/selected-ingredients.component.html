@@ -20,8 +20,10 @@
 </mat-button-toggle-group>
 
 <div class="pizza-action-btns">
-    <button mat-raised-button color="primary" (click)="savePizza()">Make Order</button>
-    <button mat-raised-button color="primary" (click)="savePizzaAndMakeAnother()">Make Another</button>
+    <button [disabled]="!selectedIngredients.length" mat-raised-button color="primary" (click)="savePizza()">Make
+        Order</button>
+    <button [disabled]="!selectedIngredients.length" mat-raised-button color="primary"
+        (click)="savePizzaAndMakeAnother()">Make Another</button>
     <button mat-raised-button color="warn" (click)="onReset()">Reset</button>
 </div>
 

@@ -1,5 +1,5 @@
-<mat-stepper>
-    <mat-step>
+<mat-stepper [linear]="true">
+    <mat-step [completed]="hasOrders">
         <ng-template matStepLabel>Choose ingredients</ng-template>
         <app-ingredients />
     </mat-step>
