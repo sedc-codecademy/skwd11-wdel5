@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common'
 import { MatListModule } from '@angular/material/list'
 import { Ingredient } from '../../types/enums/ingredient.enum'
 import { MatChipOption } from '@angular/material/chips'
+import { NormalizeEnumPipe } from '../../pipes/normalize-enum.pipe'
 
 @Component({
     selector: 'app-ingredients-list',
     standalone: true,
     templateUrl: './ingredients-list.component.html',
     styleUrls: ['./ingredients-list.component.scss'],
-    imports: [CommonModule, MatListModule],
+    imports: [CommonModule, MatListModule, NormalizeEnumPipe],
 })
 export class IngredientsListComponent {
     // selectedIngredients are used to update the selected items in the list in case of deletion in the sibling component

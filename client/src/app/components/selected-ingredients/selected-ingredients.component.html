@@ -1,24 +1,29 @@
 <h1>Selected ingredients:</h1>
 
 <mat-list role="list">
-    <div
-        class="list-item-wrapper"
-        *ngFor="let ingredient of selectedIngredients"
-    >
+    <div class="list-item-wrapper" *ngFor="let ingredient of selectedIngredients">
         <mat-list-item role="listitem">
-            {{ ingredient }}
+            {{ ingredient | normalizeEnum }}
         </mat-list-item>
         <div class="ingredients-action-btns">
-            <button
-                mat-mini-fab
-                color="warn"
-                (click)="onDeleteIngredient(ingredient)"
-            >
+            <button mat-mini-fab color="warn" (click)="onDeleteIngredient(ingredient)">
                 <mat-icon>delete</mat-icon>
             </button>
         </div>
     </div>
 </mat-list>
+
+<mat-button-toggle-group [value]="size" (change)="onSizeChange($event)">
+    <mat-button-toggle value="SMALL">Small</mat-button-toggle>
+    <mat-button-toggle value="MEDIUM">Medium</mat-button-toggle>
+    <mat-button-toggle value="LARGE">Large</mat-button-toggle>
+</mat-button-toggle-group>
+
+<div class="pizza-action-btns">
+    <button mat-raised-button color="primary" (click)="savePizza()">Make Order</button>
+    <button mat-raised-button color="primary" (click)="savePizzaAndMakeAnother()">Make Another</button>
+    <button mat-raised-button color="warn" (click)="onReset()">Reset</button>
+</div>
 
 <!-- mat-list, mat-list-item: https://material.angular.io/components/list/overview -->
 <!-- mat-icon-button, mat-icon: https://material.angular.io/components/icon/overview -->

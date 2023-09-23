@@ -13,11 +13,21 @@ import { Ingredient } from 'src/app/types/enums/ingredient.enum'
 import { MatListModule } from '@angular/material/list'
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
+import { NormalizeEnumPipe } from '../../pipes/normalize-enum.pipe'
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { PizzaSize } from 'src/app/types/enums/pizza-size.enum'
 
 @Component({
     selector: 'app-selected-ingredients',
     standalone: true,
-    imports: [CommonModule, MatListModule, MatButtonModule, MatIconModule],
+    imports: [
+        CommonModule,
+        MatListModule,
+        MatButtonModule,
+        MatIconModule,
+        NormalizeEnumPipe,
+        MatButtonToggleModule,
+    ],
     templateUrl: './selected-ingredients.component.html',
     styleUrls: ['./selected-ingredients.component.scss'],
 })
@@ -30,6 +40,8 @@ export class SelectedIngredientsComponent
     // Event emitter that will emit the ingredient that is to be deleted from the list of selected ingredients.
     @Output() handleDeleteIngredient: EventEmitter<Ingredient> =
         new EventEmitter<Ingredient>()
+
+    size: PizzaSize = PizzaSize.MEDIUM
 
     constructor() {
         // Lifecycle method 1. This will only be called once when the CLASS is first initialized.
@@ -46,6 +58,16 @@ export class SelectedIngredientsComponent
         // It's used to do things that need to be done after the COMPONENT is initialized like making API calls, etc.
         console.log('ON INIT', this.selectedIngredients)
     }
+
+    onSizeChange(event: any) {
+        this.size = event.value
+    }
+
+    savePizza() {}
+
+    savePizzaAndMakeAnother() {}
+
+    onReset() {}
 
     ngOnChanges() {
         // Lifecycle method 2. This will be called every time the INPUTS are changed.

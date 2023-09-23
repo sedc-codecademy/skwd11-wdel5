@@ -1,18 +1,16 @@
-<mat-card *ngIf="!!pizza">
+<mat-card *ngIf="!!pizza" appHotPizza [ingredients]="pizza.ingredients">
     <mat-card-header>{{ pizza.name }}</mat-card-header>
-    <img
-        mat-card-image
-        height="300px"
-        width="300px"
-        [src]="pizza.image"
-        [alt]="pizza.name"
-    />
+    <img mat-card-image height="300px" width="300px" [src]="pizza.image" [alt]="pizza.name" />
     <mat-card-content>
         <mat-chip *ngFor="let ingredient of pizza.ingredients">
-            {{ ingredient }}
+            {{ ingredient | normalizeEnum }}
         </mat-chip>
     </mat-card-content>
 </mat-card>
+
+<!-- <pre>
+    {{ pizza | json }}
+</pre> -->
 
 <!-- {{NAME_OF_PROPERTY_FROM_COMPONENT}} is syntax used by Angular to show the value from the component in the template -->
 <!-- *ngIf is an Angular directive that replicated the JS if statement. If the passed value (in this case "!!pizza") is true it will load mat-card, it it's false it wont -->

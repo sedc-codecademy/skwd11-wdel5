@@ -2,12 +2,9 @@
 
 <!-- selectionChange is an event that is triggered by Angular Material List Component  -->
 <mat-selection-list (selectionChange)="onSelect($event)">
-    <mat-list-option
-        *ngFor="let ingredient of ingredients"
-        [value]="ingredient"
-        [selected]="selectedIngredients.includes(ingredient)"
-    >
-        {{ ingredient }}
+    <mat-list-option *ngFor="let ingredient of ingredients" [value]="ingredient"
+        [selected]="selectedIngredients.includes(ingredient)">
+        {{ ingredient | normalizeEnum }}
     </mat-list-option>
 </mat-selection-list>
 
