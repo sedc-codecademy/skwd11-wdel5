@@ -6,7 +6,7 @@ import { Ingredient } from '../types/enums/ingredient.enum'
     standalone: true,
 })
 export class NormalizeEnumPipe implements PipeTransform {
-    transform(value: string): string {
+    transform(value: string | undefined): string {
         if (typeof value !== 'string' || !value?.length) {
             return ''
         }

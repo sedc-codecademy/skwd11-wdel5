@@ -1,3 +1,4 @@
+import { PizzaService } from './../../services/pizza.service'
 import {
     AfterViewInit,
     Component,
@@ -16,6 +17,9 @@ import { MatIconModule } from '@angular/material/icon'
 import { NormalizeEnumPipe } from '../../pipes/normalize-enum.pipe'
 import { MatButtonToggleModule } from '@angular/material/button-toggle'
 import { PizzaSize } from 'src/app/types/enums/pizza-size.enum'
+import { MatStepper } from '@angular/material/stepper'
+import { Pizza } from '../../types/interfaces/pizza.interface'
+import { calculatePizzaPrice } from 'src/app/helpers/calculate-price.helper'
 
 @Component({
     selector: 'app-selected-ingredients',
@@ -42,8 +46,12 @@ export class SelectedIngredientsComponent
         new EventEmitter<Ingredient>()
 
     size: PizzaSize = PizzaSize.MEDIUM
+    activeOrder: Pizza[] = []
 
-    constructor() {
+    constructor(
+        private pizzaService: PizzaService,
+        private matStepper: MatStepper
+    ) {
         // Lifecycle method 1. This will only be called once when the CLASS is first initialized.
         console.log('CONSTRUCTOR')
     }
@@ -53,21 +61,58 @@ export class SelectedIngredientsComponent
         this.handleDeleteIngredient.emit(ingredient)
     }
 
-    ngOnInit() {
-        // Lifecycle method 3. This will only be called once when the COMPONENT is first initialized.
-        // It's used to do things that need to be done after the COMPONENT is initialized like making API calls, etc.
-        console.log('ON INIT', this.selectedIngredients)
-    }
-
     onSizeChange(event: any) {
         this.size = event.value
     }
 
-    savePizza() {}
+    savePizza() {
+        this.pizzaService.updateActiveOrder([
+            ...this.activeOrder,
+            {
+                id: Date.now(),
+                size: this.size,
+                ingredients: this.selectedIngredients,
+                name: 'Pizza',
+                image: '',
+                price: calculatePizzaPrice(this.size, this.selectedIngredients),
+            },
+        ])
+        this.matStepper.next()
+    }
 
-    savePizzaAndMakeAnother() {}
+    savePizzaAndMakeAnother() {
+        this.pizzaService.updateActiveOrder([
+            ...this.activeOrder,
+            {
+                id: Date.now(),
+                size: this.size,
+                ingredients: this.selectedIngredients,
+                name: 'Pizza',
+                image: '',
+                price: calculatePizzaPrice(this.size, this.selectedIngredients),
+            },
+        ])
 
-    onReset() {}
+        this.selectedIngredients.forEach((i) =>
+            this.handleDeleteIngredient.emit(i)
+        )
+    }
+
+    onReset() {
+        this.selectedIngredients.forEach((i) =>
+            this.handleDeleteIngredient.emit(i)
+        )
+    }
+
+    ngOnInit() {
+        // Lifecycle method 3. This will only be called once when the COMPONENT is first initialized.
+        // It's used to do things that need to be done after the COMPONENT is initialized like making API calls, etc.
+        // console.log('ON INIT', this.selectedIngredients)
+
+        this.pizzaService.activeOrder$.subscribe((order: Pizza[]) => {
+            this.activeOrder = order
+        })
+    }
 
     ngOnChanges() {
         // Lifecycle method 2. This will be called every time the INPUTS are changed.

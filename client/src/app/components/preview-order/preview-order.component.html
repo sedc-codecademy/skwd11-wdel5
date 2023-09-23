@@ -1,1 +1,23 @@
-<p>preview-order works!</p>
+<div class="wrapper">
+    <div class="container">
+        <h1>Your order:</h1>
+        <mat-list>
+            <mat-list-item *ngFor="let pizza of activeOrder$ | async">
+                <span matListItemTitle>
+                    {{pizza.name}}
+                </span>
+                <span matListItemLine>
+                    Size: {{pizza.size | normalizeEnum}} | Ingredients: {{pizza.ingredients.join(', ')}}
+                </span>
+                <span matListItemLine>
+                    Price: {{pizza.price | currency: 'EUR': true}}
+                </span>
+            </mat-list-item>
+        </mat-list>
+
+        <div>
+            <h3>Total price: {{calculateTotalPrice(activeOrder$ | async) | currency: "EUR": true}}</h3>
+            <button mat-raised-button matStepperNext color="primary">Go to checkout</button>
+        </div>
+    </div>
+</div>

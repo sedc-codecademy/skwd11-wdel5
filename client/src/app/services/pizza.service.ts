@@ -1,3 +1,4 @@
+import { BehaviorSubject, Observable } from 'rxjs'
 import { Ingredient } from '../types/enums/ingredient.enum'
 import { Pizza } from '../types/interfaces/pizza.interface'
 import { Injectable } from '@angular/core'
@@ -7,6 +8,18 @@ import { Injectable } from '@angular/core'
 })
 // An Angular Service is an object (class) that can be used to share data between components.
 export class PizzaService {
+    private activeOrder: BehaviorSubject<Pizza[]> = new BehaviorSubject<
+        Pizza[]
+    >([])
+
+    activeOrder$: Observable<Pizza[]> = this.activeOrder.asObservable()
+
+    updateActiveOrder(order: Pizza[]): void {
+        this.activeOrder.next(order)
+    }
+
+    constructor() {}
+
     defaultPizzas: Pizza[] = [
         {
             id: 1,
@@ -117,6 +130,4 @@ export class PizzaService {
             ],
         },
     ]
-
-    constructor() {}
 }
