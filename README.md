@@ -1,9 +1,22 @@
 # Build pizza app! with ANGULAR, .NET7 and POSTGRESQL
 
+## Module plan
+1. [Angular] Initializing Angular Project, Creating Components, Routing, Directives, Modules
+2. [Angular] Services, Dependency Injection, Lifecycle Methods, Custom Pipes, Custom Directives, Inputs, Outputs
+3. [Angular] Forms, Reactive Forms, Form Validation, Observables, Pipes 
+4. [.NET] TBD
+5. [.NET] TBD
+6. [.NET] TBD
+7. [.NET] TBD
+8. [.NET] TBD
+9. [Angular] Authentication, Guards, Interceptors 
+10. [Angular] HTTP Client, RXJS Operators, Error Handling
+
+
 ## FRONTEND PART CONFIG
 
 ### Init Angular project
-1. Install Node JS - https://nodejs.org/en/download/ (used only the first time) [LTS version]
+1. Install NodeJS - https://nodejs.org/en/download/ (used only the first time) [LTS version]
 2. Confirm installation - `node -v` and `npm -v` should return a value (ex. 18.17.1 and 6.14.15)
 3. Install Angular CLI - `npm install -g @angular/cli` (used only the first time)
 4. `ng version` to check if it's installed
@@ -27,13 +40,14 @@
 1. Create component - `ng generate component components/<NAME_OF_COMPONENT> --standalone`
 2. Create service - `ng generate service services/<NAME_OF_SERVICE>`
 3. Create guard - `ng generate guard guards/<NAME_OF_GUARD>`
-4. Create pipe - `ng generate pipe pipes/<NAME_OF_PIPE>`
-5. Create directive - `ng generate directive directives/<NAME_OF_DIRECTIVE>`
+4. Create pipe - `ng generate pipe pipes/<NAME_OF_PIPE> --standalone`
+5. Create directive - `ng generate directive directives/<NAME_OF_DIRECTIVE> --standalone`
 6. skip tests (this is added to each of the previous commands to prevent creating unnecessary .spec files) - `--skip-tests`
 
 ### Useful links
 - https://angular.io/
 - https://material.angular.io/
+- https://rxjs.dev/api
 
 ### Useful VS Code Extensions (Angular related)
 - AutoImport https://marketplace.visualstudio.com/items?itemName=steoates.autoimport

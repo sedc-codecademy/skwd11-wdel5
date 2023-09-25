@@ -5,11 +5,24 @@
             <span matIconPrefix>
                 <mat-icon>home</mat-icon>
             </span>
-            <input type="text" matInput placeholder="Ex. Partizanska 11b, Skopje, Macedonia" [formControl]="address">
+            <input
+                type="text"
+                matInput
+                placeholder="Ex. Partizanska 11b, Skopje, Macedonia"
+                [formControl]="address"
+            />
         </mat-form-field>
 
-        <button [disabled]="address.invalid" mat-raised-button color="primary" (click)="onSubmitOrder()">
+        <button
+            [disabled]="address.invalid"
+            mat-raised-button
+            color="primary"
+            (click)="onSubmitOrder()"
+        >
             Make order
         </button>
     </div>
 </div>
+
+<!-- mat-form-field: https://material.angular.io/components/input/overview -->
+<!-- formControl: https://angular.io/api/forms/FormControl -->

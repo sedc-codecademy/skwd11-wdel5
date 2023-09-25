@@ -8,6 +8,7 @@ import { NormalizeEnumPipe } from 'src/app/pipes/normalize-enum.pipe'
 import { MatIconModule } from '@angular/material/icon'
 import { PizzaService } from 'src/app/services/pizza.service'
 import { Router } from '@angular/router'
+import { MatButtonModule } from '@angular/material/button'
 
 @Component({
     selector: 'app-pizza-card',
@@ -19,6 +20,7 @@ import { Router } from '@angular/router'
         HotPizzaDirective,
         NormalizeEnumPipe,
         MatIconModule,
+        MatButtonModule,
     ],
     templateUrl: './pizza-card.component.html',
     styleUrls: ['./pizza-card.component.scss'],
@@ -33,6 +35,7 @@ export class PizzaCardComponent {
     ) {}
 
     selectPizza() {
+        // Update the selected ingredients in the pizza service and navigate to the pizza maker page where the ingredients will be pre-selected.
         this.pizzaService.updateSelectedIngredients(
             this.pizza?.ingredients ?? []
         )

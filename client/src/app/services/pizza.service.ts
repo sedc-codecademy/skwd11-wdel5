@@ -8,16 +8,22 @@ import { Injectable } from '@angular/core'
 })
 // An Angular Service is an object (class) that can be used to share data between components.
 export class PizzaService {
+    // BehaviorSubject is a type of Subject, a subject is a special type of Observable that allows values to be multicasted to many Observers.
+    // While using the service as a data store, we create the following three elements:
+    // 1. A BehaviorSubject to store the active order (usually is private so that it can't be manually updated from outside the service).
     private activeOrder: BehaviorSubject<Pizza[]> = new BehaviorSubject<
         Pizza[]
     >([])
 
+    // 2. An Observable to expose the active order value to the components.
     activeOrder$: Observable<Pizza[]> = this.activeOrder.asObservable()
 
+    // 3. A method to update the active order value (more precisely the Behaviour subject).
     updateActiveOrder(order: Pizza[]): void {
         this.activeOrder.next(order)
     }
 
+    // The same logic from above is applied to the selected ingredients.
     private selectedIngredients: BehaviorSubject<Ingredient[]> =
         new BehaviorSubject<Ingredient[]>([])
 
@@ -31,22 +37,28 @@ export class PizzaService {
     constructor() {}
 
     updatePizzaTitle(id: number, name: string) {
+        // We get the current active order from the BehaviourSubject by using the getValue() method.
         const order = this.activeOrder.getValue()
+        // changed to filter to avoid mutating the array (filter returns a new array, unlike splice which was mutating the original array and causing issues)
         const index = order.findIndex((p) => p.id === id)
         order[index].name = name
         this.updateActiveOrder(order)
     }
 
     submitOrder() {
+        // TODO: Send the order to the backend
         console.log('Submitting order', this.activeOrder.getValue())
     }
 
     deletePizzaFromOrder(index: number) {
-        const order = this.activeOrder.getValue().splice(index, 1)
+        const updatedOrder = this.activeOrder
+            .getValue()
+            .filter((_, i) => i !== index)
 
-        this.updateActiveOrder(order)
+        this.updateActiveOrder(updatedOrder)
     }
 
+    // Default data for pizzas
     defaultPizzas: Pizza[] = [
         {
             id: 1,

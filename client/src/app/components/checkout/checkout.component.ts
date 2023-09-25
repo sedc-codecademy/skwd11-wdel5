@@ -21,14 +21,17 @@ import { PizzaService } from 'src/app/services/pizza.service'
     styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent {
-    address: FormControl<string | null> = new FormControl(
-        '',
-        Validators.required
+    // Form control for the delivery address
+    address: FormControl<string | null> = new FormControl<string | null>(
+        '', // The FormControl is initialized with an empty string
+        Validators.required // Required field by using Validators.required
     )
 
     constructor(private pizzaService: PizzaService) {}
 
     onSubmitOrder() {
+        // Submit the order by calling the submitOrder() method of the pizzaService. All the data is stored in the pizzaService
+        // and all HTTP requests are made in the pizzaService (or any other service). The component is only used to display the data.
         this.pizzaService.submitOrder()
     }
 }

@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs'
-import { Pizza } from './../../types/interfaces/pizza.interface'
+import { Pizza } from '../../types/interfaces/pizza.interface'
 import { CommonModule } from '@angular/common'
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { MatStepperModule } from '@angular/material/stepper'
@@ -22,8 +22,8 @@ import { PizzaService } from 'src/app/services/pizza.service'
     ],
 })
 export class PizzaMakerComponent implements OnInit, OnDestroy {
-    hasOrders: boolean = false
-    subscription: Subscription = new Subscription()
+    hasOrders: boolean = false // flag to enable/disable going to the next step
+    subscription: Subscription = new Subscription() // we subscribe to the activeOrder$ observable to know if we have orders
 
     constructor(private pizzaService: PizzaService) {}
 
@@ -36,6 +36,7 @@ export class PizzaMakerComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
+        // unsubscribe to avoid memory leaks
         this.subscription.unsubscribe()
     }
 }

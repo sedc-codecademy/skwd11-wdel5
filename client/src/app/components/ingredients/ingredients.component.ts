@@ -19,11 +19,13 @@ import { Subscription } from 'rxjs'
 })
 export class IngredientsComponent implements OnInit, OnDestroy {
     ingredients: Ingredient[] = [] // Main source of truth for ingredients. This represents the ingredients that have been selected by the user.
-    subscription: Subscription = new Subscription()
+    subscription: Subscription = new Subscription() // Subscription to the selectedIngredients$ observable, it's used to save
+    // the subscription action and to enable us to unsubscribe from it when the component is destroyed.
 
     constructor(private pizzaService: PizzaService) {}
 
     ngOnInit() {
+        // subscribe to the selectedIngredients$ observable. Each time the ingredients are updated, the subscription will be notified and the (local property) ingredients will be updated.
         this.subscription = this.pizzaService.selectedIngredients$.subscribe(
             (ingredients) => {
                 this.ingredients = ingredients
@@ -42,6 +44,7 @@ export class IngredientsComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
+        // unsubscribe from the selectedIngredients$ observable when the component is destroyed. VERY IMPORTANT to avoid difficult to debug bugs!
         this.subscription.unsubscribe()
     }
 }

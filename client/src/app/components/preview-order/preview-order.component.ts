@@ -35,11 +35,11 @@ import { MatInputModule } from '@angular/material/input'
     ],
 })
 export class PreviewOrderComponent implements OnInit {
-    activeOrder$: Observable<Pizza[]> = new Observable<Pizza[]>()
-    showTitleInput: boolean = false
+    activeOrder$: Observable<Pizza[]> = new Observable<Pizza[]>() // Local Observable of active order
+    showTitleInput: boolean = false // Boolean for showing/hiding title input
     pizzaTitle: FormControl<string | null> = new FormControl<string | null>(
-        '',
-        Validators.compose([Validators.required, Validators.minLength(3)])
+        '', // Default value for title input
+        Validators.compose([Validators.required, Validators.minLength(3)]) // Validators for title input, title must be at least 3 characters long and is required. Multiple validators are composed together by using the compose() method
     )
 
     constructor(private pizzaService: PizzaService) {}
@@ -56,6 +56,7 @@ export class PreviewOrderComponent implements OnInit {
     }
 
     onDeletePizza(index: number) {
+        // Delete pizza from order in the pizza service which has all the logic and information for the order
         this.pizzaService.deletePizzaFromOrder(index)
     }
 
@@ -64,7 +65,9 @@ export class PreviewOrderComponent implements OnInit {
     }
 
     saveTitle(id: number) {
+        // Update pizza title in the pizza service which has all the logic and information for the order
         this.pizzaService.updatePizzaTitle(id, this.pizzaTitle.value ?? '')
+        this.pizzaTitle.setValue('')
         this.showTitleInput = false
     }
 }

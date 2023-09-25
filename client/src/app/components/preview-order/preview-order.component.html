@@ -2,29 +2,47 @@
     <div class="container">
         <h1>Your order:</h1>
         <mat-list>
-            <mat-list-item *ngFor="let pizza of activeOrder$ | async; let i = index">
+            <mat-list-item
+                *ngFor="let pizza of activeOrder$ | async; let i = index"
+            >
                 <span matListItemTitle>
-                    <ng-container *ngIf="!showTitleInput; else titleInputContainer">
-                        {{pizza.name}}
-                        <button mat-icon-button matTooltip="Add custom title" (click)="showPizzaTitleInput()">
+                    <ng-container
+                        *ngIf="!showTitleInput; else titleInputContainer"
+                    >
+                        {{ pizza.name }}
+                        <button
+                            mat-icon-button
+                            matTooltip="Add custom title"
+                            (click)="showPizzaTitleInput()"
+                        >
                             <mat-icon>edit</mat-icon>
                         </button>
                     </ng-container>
                     <ng-template #titleInputContainer>
                         <mat-form-field>
                             <mat-label>Add custom title</mat-label>
-                            <input matInput type="text" [formControl]="pizzaTitle" />
-                            <button matIconSuffix mat-icon-button (click)="saveTitle(pizza.id)">
+                            <input
+                                matInput
+                                type="text"
+                                [formControl]="pizzaTitle"
+                            />
+                            <button
+                                [disabled]="pizzaTitle.invalid"
+                                matIconSuffix
+                                mat-icon-button
+                                (click)="saveTitle(pizza.id)"
+                            >
                                 <mat-icon>save</mat-icon>
                             </button>
                         </mat-form-field>
                     </ng-template>
                 </span>
                 <span matListItemLine>
-                    Size: {{pizza.size | normalizeEnum}} | Ingredients: {{pizza.ingredients | normalizeEnum}}
+                    Size: {{ pizza.size | normalizeEnum }} | Ingredients:
+                    {{ pizza.ingredients | normalizeEnum }}
                 </span>
                 <span matListItemLine>
-                    Price: {{pizza.price | currency: 'EUR': true}}
+                    Price: {{ pizza.price | currency: 'EUR' : true }}
                 </span>
                 <button mat-icon-button color="warn" (click)="onDeletePizza(i)">
                     <mat-icon>delete</mat-icon>
@@ -33,8 +51,34 @@
         </mat-list>
 
         <div>
-            <h3>Total price: {{calculateTotalPrice(activeOrder$ | async) | currency: "EUR": true}}</h3>
-            <button mat-raised-button matStepperNext color="primary">Go to checkout</button>
+            <h3>
+                Total price:
+                {{
+                    calculateTotalPrice(activeOrder$ | async)
+                        | currency: 'EUR' : true
+                }}
+            </h3>
+            <button mat-raised-button matStepperNext color="primary">
+                Go to checkout
+            </button>
         </div>
     </div>
 </div>
+
+<!-- ng-container: https://angular.io/api/core/ng-container -->
+<!-- The <ng-container> allows us to use structural directives without any extra element, making sure that the only DOM changes being applied are those dictated by the directives themselves.
+This not only increases performance (even so slightly) since the browser ends up rendering less elements but can also be a valuable asset in having cleaner DOMs and styles alike. -->
+
+<!-- ng-template: https://angular.io/api/core/ng-template -->
+<!-- With <ng-template>, you can define template content that is only being rendered by Angular when you, whether directly or indirectly,
+specifically instruct it to do so, allowing you to have full control over how and when the content is displayed. -->
+
+<!-- currency is an Angular default pipe, that is used to convert numbers to a currency value -->
+<!-- normalizeEnum is a custom pipe (located in /pipes) that is used to convert the hard to read Ingredient enum to a more human-readable format -->
+<!--
+{{
+    calculateTotalPrice(activeOrder$ | async) -- async pipe is used to subscribe to the observable and get the value from activeOrder$. The value is then passed to the calculateTotalPrice function which will return a number
+        | currency: 'EUR' : true -- that number is converted to a currency value. The first parameter is the currency code, the second is whether to display the currency symbol or not
+}}
+-->
+<!-- let i = index is used to get the index value for each element in the array -->
