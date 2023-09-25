@@ -4,11 +4,11 @@
 1. [Angular] Initializing Angular Project, Creating Components, Routing, Directives, Modules
 2. [Angular] Services, Dependency Injection, Lifecycle Methods, Custom Pipes, Custom Directives, Inputs, Outputs
 3. [Angular] Forms, Reactive Forms, Form Validation, Observables, Pipes 
-4. [.NET] TBD
-5. [.NET] TBD
-6. [.NET] TBD
-7. [.NET] TBD
-8. [.NET] TBD
+4. [.NET] Getting familiar with c# .NET, Initializing and setting new Project, explainig design pattern and how it works, basic OOP knowledge, setting up PGAdmin
+5. [.NET] Login Register with Identity - explaining services, extension methods, Custom exceptions, JWT, Password Hashing
+6. [.NET] Creating Pizza Endpoint - Mappings, Dtos, Automapper
+7. [.NET] Creating Order Endpoint - Connecting with pizza
+8. [.NET] Finishing Endpoints logic, SOLID, DRY, KISS, organizing program.cs with best practises
 9. [Angular] Authentication, Guards, Interceptors 
 10. [Angular] HTTP Client, RXJS Operators, Error Handling
 
