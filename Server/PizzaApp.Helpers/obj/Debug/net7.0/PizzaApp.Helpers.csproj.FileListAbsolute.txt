@@ -1,0 +1,17 @@
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Helpers.deps.json
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Helpers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Helpers.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.DataAccess.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Domain.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.DataAccess.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Domain.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.csproj.CopyComplete
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\refint\PizzaApp.Helpers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\ref\PizzaApp.Helpers.dll

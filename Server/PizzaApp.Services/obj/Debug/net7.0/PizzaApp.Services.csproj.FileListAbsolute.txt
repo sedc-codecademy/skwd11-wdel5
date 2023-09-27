@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Services.deps.json
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Services.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Services.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\refint\PizzaApp.Services.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\ref\PizzaApp.Services.dll

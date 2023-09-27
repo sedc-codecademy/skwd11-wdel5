@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace PizzaApp.Domain.Enums
 {
-    internal class IngridientsEnum
+    public enum IngridientsEnum
     {
+        Mozarella = 0,
+        Chedar = 1,
+        Pepperoni,
+        Salami,
+        Oregano,
+        Tomatoes,
+        Garlic,
+        Paprica,
+        Onion
     }
 }

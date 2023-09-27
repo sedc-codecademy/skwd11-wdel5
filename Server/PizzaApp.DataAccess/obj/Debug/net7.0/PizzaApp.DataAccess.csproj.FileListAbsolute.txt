@@ -1,0 +1,17 @@
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\bin\Debug\net7.0\PizzaApp.DataAccess.deps.json
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\bin\Debug\net7.0\PizzaApp.DataAccess.runtimeconfig.json
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\bin\Debug\net7.0\PizzaApp.DataAccess.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\bin\Debug\net7.0\PizzaApp.DataAccess.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\bin\Debug\net7.0\PizzaApp.Domain.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\bin\Debug\net7.0\PizzaApp.Domain.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.csproj.CopyComplete
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\refint\PizzaApp.DataAccess.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\PizzaApp.DataAccess.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.DataAccess\obj\Debug\net7.0\ref\PizzaApp.DataAccess.dll

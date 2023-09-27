@@ -1,0 +1,17 @@
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\bin\Debug\net7.0\PizzaApp.Mappers.deps.json
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\bin\Debug\net7.0\PizzaApp.Mappers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\bin\Debug\net7.0\PizzaApp.Mappers.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\refint\PizzaApp.Mappers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\ref\PizzaApp.Mappers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\bin\Debug\net7.0\PizzaApp.Domain.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\bin\Debug\net7.0\PizzaApp.Dtos.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\bin\Debug\net7.0\PizzaApp.Domain.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\bin\Debug\net7.0\PizzaApp.Dtos.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Mappers\obj\Debug\net7.0\PizzaApp.Mappers.csproj.CopyComplete

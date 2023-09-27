@@ -14,8 +14,8 @@ namespace PizzaApp.DataAccess.DbContext
     {
         public PizzaAppDbContext(DbContextOptions options) : base(options) 
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
         }
 
         public DbSet<Pizza> Pizza { get; set; }
