@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PizzaApp.DataAccess\PizzaApp.DataAccess.csproj" />
     <ProjectReference Include="..\PizzaApp.Domain\PizzaApp.Domain.csproj" />
     <ProjectReference Include="..\PizzaApp.Helpers\PizzaApp.Helpers.csproj" />
