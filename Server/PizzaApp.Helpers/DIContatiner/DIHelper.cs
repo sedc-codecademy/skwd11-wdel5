@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using PizzaApp.DataAccess.DbContext;
 using PizzaApp.DataAccess.Repositories.Abstractions;
 using PizzaApp.DataAccess.Repositories.Implementations;
+using PizzaApp.Services.UserServices.Abstractions;
+using PizzaApp.Services.UserServices.Implemetations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,12 @@ namespace PizzaApp.Helpers.DIContatiner
         {
             services.AddTransient<IPizzaRepository, PizzaRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
+        }
+
+        public static void InjectServices(IServiceCollection services)
+        {
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ITokenService, TokenService>();
         }
     }
 }

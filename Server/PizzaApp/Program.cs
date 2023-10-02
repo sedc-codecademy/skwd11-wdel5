@@ -69,6 +69,7 @@ builder.Services.AddAuthentication(option =>
     });
 
 DIHelper.InjectRepositories(builder.Services);
+DIHelper.InjectServices(builder.Services);
 
 
 var app = builder.Build();

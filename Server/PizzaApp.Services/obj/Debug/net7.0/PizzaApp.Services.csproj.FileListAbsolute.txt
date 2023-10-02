@@ -10,3 +10,10 @@ C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\refint\PizzaApp.Services.dll
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.pdb
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\ref\PizzaApp.Services.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Domain.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Dtos.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Shared.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Dtos.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Shared.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Domain.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.csproj.CopyComplete

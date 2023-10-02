@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using PizzaApp.Domain.Entities;
+using PizzaApp.Dtos.PizzaDtos;
 using PizzaApp.Dtos.UserDtos;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,15 @@ namespace PizzaApp.Mappers.MappersConfig
     {
         public AutoMapperProfile() 
         {
+            //userMapping
             CreateMap<User, LoginUserDto>().ReverseMap();
             CreateMap<User, RegisterUserDto>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
+
+            //PizzaMappings
+            CreateMap<Pizza, PizzaDto>().ReverseMap();
+            CreateMap<Pizza, AddPizzaDto>().ReverseMap();
+            CreateMap<Pizza, UpdatePizzaDto>().ReverseMap();
         }
     }
 }

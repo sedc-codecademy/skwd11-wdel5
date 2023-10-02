@@ -15,3 +15,9 @@ C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\n
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\refint\PizzaApp.Helpers.dll
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\PizzaApp.Helpers.pdb
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\obj\Debug\net7.0\ref\PizzaApp.Helpers.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Dtos.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Services.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Shared.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Services.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Dtos.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Helpers\bin\Debug\net7.0\PizzaApp.Shared.pdb

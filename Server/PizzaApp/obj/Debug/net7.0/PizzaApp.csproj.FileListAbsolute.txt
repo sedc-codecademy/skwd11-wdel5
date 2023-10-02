@@ -71,3 +71,5 @@ C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp\bin\Debug\net7.0\Pi
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp\bin\Debug\net7.0\PizzaApp.Mappers.dll
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp\bin\Debug\net7.0\PizzaApp.Mappers.pdb
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp\bin\Debug\net7.0\PizzaApp.Dtos.pdb
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp\bin\Debug\net7.0\PizzaApp.Services.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp\bin\Debug\net7.0\PizzaApp.Services.pdb

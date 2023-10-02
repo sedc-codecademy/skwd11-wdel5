@@ -20,6 +20,7 @@
           "PizzaApp.Domain": "1.0.0",
           "PizzaApp.Helpers": "1.0.0",
           "PizzaApp.Mappers": "1.0.0",
+          "PizzaApp.Services": "1.0.0",
           "PizzaApp.Shared": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0",
           "Swashbuckle.AspNetCore.Filters": "7.0.11"
@@ -488,7 +489,8 @@
       "PizzaApp.Helpers/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
-          "PizzaApp.DataAccess": "1.0.0"
+          "PizzaApp.DataAccess": "1.0.0",
+          "PizzaApp.Services": "1.0.0"
         },
         "runtime": {
           "PizzaApp.Helpers.dll": {}
@@ -502,6 +504,16 @@
         },
         "runtime": {
           "PizzaApp.Mappers.dll": {}
+        }
+      },
+      "PizzaApp.Services/1.0.0": {
+        "dependencies": {
+          "PizzaApp.Dtos": "1.0.0",
+          "PizzaApp.Shared": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "6.15.1"
+        },
+        "runtime": {
+          "PizzaApp.Services.dll": {}
         }
       },
       "PizzaApp.Shared/1.0.0": {
@@ -881,6 +893,11 @@
       "sha512": ""
     },
     "PizzaApp.Mappers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PizzaApp.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

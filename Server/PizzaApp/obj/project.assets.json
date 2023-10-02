@@ -853,7 +853,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
-          "PizzaApp.DataAccess": "1.0.0"
+          "PizzaApp.DataAccess": "1.0.0",
+          "PizzaApp.Services": "1.0.0"
         },
         "compile": {
           "bin/placeholder/PizzaApp.Helpers.dll": {}
@@ -875,6 +876,23 @@
         },
         "runtime": {
           "bin/placeholder/PizzaApp.Mappers.dll": {}
+        }
+      },
+      "PizzaApp.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "PizzaApp.DataAccess": "1.0.0",
+          "PizzaApp.Dtos": "1.0.0",
+          "PizzaApp.Shared": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "6.15.1"
+        },
+        "compile": {
+          "bin/placeholder/PizzaApp.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PizzaApp.Services.dll": {}
         }
       },
       "PizzaApp.Shared/1.0.0": {
@@ -2309,6 +2327,11 @@
       "path": "../PizzaApp.Mappers/PizzaApp.Mappers.csproj",
       "msbuildProject": "../PizzaApp.Mappers/PizzaApp.Mappers.csproj"
     },
+    "PizzaApp.Services/1.0.0": {
+      "type": "project",
+      "path": "../PizzaApp.Services/PizzaApp.Services.csproj",
+      "msbuildProject": "../PizzaApp.Services/PizzaApp.Services.csproj"
+    },
     "PizzaApp.Shared/1.0.0": {
       "type": "project",
       "path": "../PizzaApp.Shared/PizzaApp.Shared.csproj",
@@ -2329,6 +2352,7 @@
       "PizzaApp.Domain >= 1.0.0",
       "PizzaApp.Helpers >= 1.0.0",
       "PizzaApp.Mappers >= 1.0.0",
+      "PizzaApp.Services >= 1.0.0",
       "PizzaApp.Shared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.Filters >= 7.0.11"
@@ -2377,6 +2401,9 @@
             },
             "C:\\Users\\Administrator\\Desktop\\SEDC_PizzaApp\\Server\\PizzaApp.Mappers\\PizzaApp.Mappers.csproj": {
               "projectPath": "C:\\Users\\Administrator\\Desktop\\SEDC_PizzaApp\\Server\\PizzaApp.Mappers\\PizzaApp.Mappers.csproj"
+            },
+            "C:\\Users\\Administrator\\Desktop\\SEDC_PizzaApp\\Server\\PizzaApp.Services\\PizzaApp.Services.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\SEDC_PizzaApp\\Server\\PizzaApp.Services\\PizzaApp.Services.csproj"
             },
             "C:\\Users\\Administrator\\Desktop\\SEDC_PizzaApp\\Server\\PizzaApp.Shared\\PizzaApp.Shared.csproj": {
               "projectPath": "C:\\Users\\Administrator\\Desktop\\SEDC_PizzaApp\\Server\\PizzaApp.Shared\\PizzaApp.Shared.csproj"

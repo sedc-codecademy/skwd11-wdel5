@@ -27,6 +27,7 @@
     <ProjectReference Include="..\PizzaApp.Domain\PizzaApp.Domain.csproj" />
     <ProjectReference Include="..\PizzaApp.Helpers\PizzaApp.Helpers.csproj" />
     <ProjectReference Include="..\PizzaApp.Mappers\PizzaApp.Mappers.csproj" />
+    <ProjectReference Include="..\PizzaApp.Services\PizzaApp.Services.csproj" />
     <ProjectReference Include="..\PizzaApp.Shared\PizzaApp.Shared.csproj" />
   </ItemGroup>
 

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PizzaApp.DataAccess\PizzaApp.DataAccess.csproj" />
+    <ProjectReference Include="..\PizzaApp.Services\PizzaApp.Services.csproj" />
   </ItemGroup>
 
 </Project>

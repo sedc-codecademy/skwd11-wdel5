@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PizzaApp.DataAccess\PizzaApp.DataAccess.csproj" />
     <ProjectReference Include="..\PizzaApp.Dtos\PizzaApp.Dtos.csproj" />
     <ProjectReference Include="..\PizzaApp.Shared\PizzaApp.Shared.csproj" />
   </ItemGroup>
