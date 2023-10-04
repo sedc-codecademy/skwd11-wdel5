@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="OrderDtos\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PizzaApp.Domain\PizzaApp.Domain.csproj" />
   </ItemGroup>
 
