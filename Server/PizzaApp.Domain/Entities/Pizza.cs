@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace PizzaApp.Domain.Entities
@@ -22,6 +23,7 @@ namespace PizzaApp.Domain.Entities
         public string UserId { get; set; } = string.Empty;
         public List<IngridientsEnum> Ingridients { get; set; } = new List<IngridientsEnum>();
         public int? OrderId { get; set; }
+        [JsonIgnore]
         public Order? Order { get; set; }
     }
 }

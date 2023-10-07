@@ -17,3 +17,5 @@ C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Shared.pdb
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.Domain.pdb
 C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\obj\Debug\net7.0\PizzaApp.Services.csproj.CopyComplete
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.DataAccess.dll
+C:\Users\Administrator\Desktop\SEDC_PizzaApp\Server\PizzaApp.Services\bin\Debug\net7.0\PizzaApp.DataAccess.pdb

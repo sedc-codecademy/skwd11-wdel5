@@ -24,6 +24,12 @@ namespace PizzaApp.DataAccess.DbContext
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<Order>()
+                .HasMany(o => o.Pizzas)
+                .WithOne(o => o.Order)
+                .HasForeignKey(p => p.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
