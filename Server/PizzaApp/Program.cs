@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using PizzaApp.DataAccess.DbContext;
 using PizzaApp.Domain.Entities;
 using PizzaApp.Helpers.DIContatiner;
+using PizzaApp.Helpers.Extensions;
 using PizzaApp.Mappers.MappersConfig;
 using PizzaApp.Shared.Settings;
 using Swashbuckle.AspNetCore.Filters;
@@ -16,57 +17,68 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 //gettings app settings and the connectionstring
 var appSettings = builder.Configuration.GetSection("AppSettings");
-builder.Services.Configure<AppSettings>(appSettings);
-AppSettings appSettingsObject = appSettings.Get<AppSettings>();
 
-var connectionString = appSettingsObject.ConnectionString;
-
-//Setting db context with connection string
-builder.Services.AddDbContext<PizzaAppDbContext>(option =>
-option.UseNpgsql(connectionString));
-
-//Adding Identity
-builder.Services.AddIdentityCore<User>(option =>
-{
-    option.SignIn.RequireConfirmedAccount = true;
-})
-    .AddEntityFrameworkStores<PizzaAppDbContext>()
-    .AddDefaultTokenProviders();
-
+builder.Configuration.AddEnvironmentVariables();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
-builder.Services.AddSwaggerGen(c =>
-{
-    c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-    {
-        Description = "Standard Authorisation header using the Bearer scheme, e.g" +
-        "\bearer {token} \"",
-        In = ParameterLocation.Header,
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey
-    });
-    c.OperationFilter<SecurityRequirementsOperationFilter>();
-});
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly)
+    .AddPostgreSqlDbContext(appSettings)
+    .AddAuthentication()
+    .AddJWT(appSettings)
+    .AddIdentity()
+    .AddCors()
+    .AddSwager();
+//builder.Services.Configure<AppSettings>(appSettings);
+//AppSettings appSettingsObject = appSettings.Get<AppSettings>();
 
-builder.Services.AddAuthentication(option =>
-{
-    option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.
-            GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
-            ValidateIssuer = false,
-            ValidateAudience = false,
-        };
-    });
+//var connectionString = appSettingsObject.ConnectionString;
+
+////Setting db context with connection string
+//builder.Services.AddDbContext<PizzaAppDbContext>(option =>
+//option.UseNpgsql(connectionString));
+
+////Adding Identity
+//builder.Services.AddIdentityCore<User>(option =>
+//{
+//    option.SignIn.RequireConfirmedAccount = true;
+//})
+//    .AddEntityFrameworkStores<PizzaAppDbContext>()
+//    .AddDefaultTokenProviders();
+
+//builder.Services.AddControllers();
+//// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+//builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
+//builder.Services.AddSwaggerGen(c =>
+//{
+//    c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+//    {
+//        Description = "Standard Authorisation header using the Bearer scheme, e.g" +
+//        "\bearer {token} \"",
+//        In = ParameterLocation.Header,
+//        Name = "Authorization",
+//        Type = SecuritySchemeType.ApiKey
+//    });
+//    c.OperationFilter<SecurityRequirementsOperationFilter>();
+//});
+
+//builder.Services.AddAuthentication(option =>
+//{
+//    option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//    option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//    option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+//})
+//    .AddJwtBearer(options =>
+//    {
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuerSigningKey = true,
+//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.
+//            GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
+//            ValidateIssuer = false,
+//            ValidateAudience = false,
+//        };
+//    });
 
 DIHelper.InjectRepositories(builder.Services);
 DIHelper.InjectServices(builder.Services);
