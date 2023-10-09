@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HomeComponent } from './components/home/home.component'
+import { HttpClientModule } from '@angular/common/http'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
     declarations: [
@@ -18,6 +20,8 @@ import { HomeComponent } from './components/home/home.component'
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        HttpClientModule,
+        MatSnackBarModule,
     ],
     providers: [
         // used for services and pipes

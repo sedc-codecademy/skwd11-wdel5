@@ -1,0 +1,43 @@
+<div class="wrapper">
+    <form [formGroup]="registerForm">
+        <h1>Register</h1>
+
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input type="text" matInput placeholder="Enter Username..." formControlName="username" />
+        </mat-form-field>
+        <mat-error *ngIf="hasNameRequiredError">
+            Username is required
+        </mat-error>
+
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Enter email..." formControlName="email" />
+        </mat-form-field>
+        <mat-error *ngIf="hasEmailError">
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="hasEmailRequiredError">
+            Email is required
+        </mat-error>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input [type]="hidePassword ? 'password': 'text'" matInput placeholder="Enter password"
+                formControlName="password" />
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-error *ngIf="hasPasswordMinLengthError">
+            Password must be at least 8 characters long
+        </mat-error>
+        <mat-error *ngIf="hasPasswordRequiredError">
+            Password is required
+        </mat-error>
+
+        <button [disabled]="registerForm.invalid" mat-raised-button color="primary"
+            (click)="onRegister()">Register</button>
+    </form>
+</div>
