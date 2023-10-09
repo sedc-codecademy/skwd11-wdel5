@@ -8,14 +8,23 @@ namespace PizzaApp.Domain.Enums
 {
     public enum IngridientsEnum
     {
-        Mozarella = 0,
-        Chedar = 1,
-        Pepperoni,
-        Salami,
+        TomatoSauce = 0,
+        Mozzarella,
+        Ham,
         Oregano,
-        Tomatoes,
         Garlic,
-        Paprica,
-        Onion
+        Onion,
+        Mushrooms,
+        Parmesan,
+        Basil,
+        Pepperoni,
+        Egg,
+        ChilliPepper,
+        SourCream,
+        Bacon,
+        BlueCheese,
+        Gorgonzola,
+        Tuna,
+        Olives,
     }
 }
