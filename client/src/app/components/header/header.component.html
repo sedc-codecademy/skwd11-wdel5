@@ -7,12 +7,22 @@
     </span>
     <!--  routerLink is used as a part of RoutingModule, to tell Angular to use Angular routing instead of default browser routing, and navigate to /pizza-maker WITHOUT REFRESHING the page  -->
     <a mat-button routerLink="/pizza-maker">Kitchen</a>
-    <a mat-button href="">Saved Pizzas</a>
-    <a mat-button routerLink="/login">Login</a>
-    <a mat-button routerLink="/register">Register</a>
-    <a mat-button href="">Logout</a>
+    <a mat-button routerLink="/previous-orders">Previous Orders</a>
+
+    <ng-container *ngIf="!(isLoggedIn$ | async)">
+        <a mat-button routerLink="/login">Login</a>
+        <a mat-button routerLink="/register">Register</a>
+    </ng-container>
+
+    <a mat-button (click)="onLogout()" *ngIf="isLoggedIn$ | async">Logout</a>
 </mat-toolbar>
 
 <!-- mat-toolbar: https://material.angular.io/components/toolbar/overview -->
 <!-- mat-icon-button, mat-icon: https://material.angular.io/components/icon/overview -->
 <!-- mat-button: https://material.angular.io/components/button/overview -->
+<!-- ng-container: https://angular.io/api/core/ng-container -->
+<!-- The <ng-container> allows us to use structural directives without any extra element, making sure that the only DOM changes being applied are those dictated by the directives themselves.
+This not only increases performance (even so slightly) since the browser ends up rendering less elements but can also be a valuable asset in having cleaner DOMs and styles alike. -->
+<!-- async: The async pipe subscribes to an Observable or Promise and returns the latest value it has emitted. When a new value is emitted, the async pipe marks the component to be checked
+for changes. When the component gets destroyed, the async pipe unsubscribes automatically to avoid potential memory leaks. When the reference of the expression changes, the async pipe
+automatically unsubscribes from the old Observable or Promise and subscribes to the new one. -->

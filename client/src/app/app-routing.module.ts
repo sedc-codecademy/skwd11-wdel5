@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { HomeComponent } from './components/home/home.component'
+import { authGuard } from './guards/auth.guard'
 
 // we list all routes here to have a Single Page Application
 const routes: Routes = [
@@ -8,10 +9,17 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent }, // example: Vising localhost:4200/home will render the HomeComponent
     {
         path: 'pizza-maker',
+        canActivate: [authGuard], // we add the authGuard to the route, so that it will be executed before the component is loaded
         loadComponent: () =>
             import('./components/pizza-maker/pizza-maker.component').then(
                 (module) => module.PizzaMakerComponent
             ),
+    },
+    {
+        path: 'previous-orders',
+        canActivate: [authGuard],
+        loadComponent: () => import(`./components/previous-orders/previous-orders.component`)
+            .then(module => module.PreviousOrdersComponent)
     },
     {
         path: 'login',

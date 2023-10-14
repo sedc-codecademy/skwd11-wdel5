@@ -1,7 +1,13 @@
-import { BehaviorSubject, Observable } from 'rxjs'
+import { BehaviorSubject, Observable, catchError, of, tap } from 'rxjs'
 import { Ingredient } from '../types/enums/ingredient.enum'
 import { Pizza } from '../types/interfaces/pizza.interface'
 import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { convertIngredientsFeToBe } from '../helpers/convertIngredientsFEtoBE.helper'
+import { OrderBE, PizzaBE } from '../types/interfaces/order.interface'
+import { environment } from 'src/environments/environment'
+import { Router } from '@angular/router'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 @Injectable({
     providedIn: 'root', // This means that the service will be available in the whole application. It's deprecated, and will be set to 'root' as default in the following version of Angular.
@@ -34,7 +40,7 @@ export class PizzaService {
         this.selectedIngredients.next(ingredients)
     }
 
-    constructor() {}
+    constructor(private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {}
 
     updatePizzaTitle(id: number, name: string) {
         // We get the current active order from the BehaviourSubject by using the getValue() method.
@@ -45,9 +51,37 @@ export class PizzaService {
         this.updateActiveOrder(order)
     }
 
-    submitOrder() {
-        // TODO: Send the order to the backend
-        console.log('Submitting order', this.activeOrder.getValue())
+    submitOrder(addressTo: string): Observable<void> {
+        const pizzas = this.activeOrder.getValue()
+
+        // converting pizza object to fit BE body definition
+        const mappedPizzas = pizzas.map((pizza) => ({
+            name: pizza.name,
+            price: Math.round(pizza.price), // workaround as BE doesn't accept decimals
+            ingredients: convertIngredientsFeToBe(pizza.ingredients)
+        })) satisfies PizzaBE[] // use satisfies instead of 'as' to avoid type casting
+
+        const order = {
+            pizzas: mappedPizzas,
+            addressTo,
+            orderPrice: Math.round(
+                pizzas.reduce((acc, pizza) => acc + pizza.price, 0)
+            ) // workaround as BE doesn't accept decimals
+        } satisfies OrderBE
+
+        return this.http.post<void>(`${environment.apiUrl}/orders`, order).pipe(
+            tap(() => this.router.navigate(['/'])), // tap operator is used to handle side effects like routing, notifications, etc.
+            catchError((error) => { // catchError operator is used to handle errors
+                if (error) {
+                    this.snackBar.open(
+                        error?.error?.errors?.[0] || 'Error while making an order!',
+                        'Close',
+                        environment.snackBarConfig
+                    )
+                }
+                return of()
+            })
+        )
     }
 
     deletePizzaFromOrder(index: number) {
@@ -56,6 +90,32 @@ export class PizzaService {
             .filter((_, i) => i !== index)
 
         this.updateActiveOrder(updatedOrder)
+    }
+
+    getSavedPizzas(): Observable<Pizza[]> {
+        return this.http.get<Pizza[]>(`${environment.apiUrl}/Pizza`)
+    }
+
+    deletePizza(id: number): Observable<void> {
+        return this.http.delete<void>(`${environment.apiUrl}/Pizza/${id}`).pipe(
+            tap(() => {
+                this.snackBar.open(
+                    'You have successfully deleted the pizza!',
+                    'Close',
+                    environment.snackBarConfig
+                )
+            }),
+            catchError((error) => {
+                if (error) {
+                    this.snackBar.open(
+                        error?.error?.errors?.[0] || 'Error while deleting the pizza!',
+                        'Close',
+                        environment.snackBarConfig
+                    )
+                }
+                return of()
+            })
+        )
     }
 
     // Default data for pizzas

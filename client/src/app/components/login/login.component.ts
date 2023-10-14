@@ -37,6 +37,7 @@ export class LoginComponent implements OnDestroy {
         password: new FormControl<string>('', Validators.required),
     })
 
+    // getters are used to make the code more readable
     get hasNameRequiredError(): boolean {
         return !!(
             this.loginForm.get('username')?.hasError('required') &&
@@ -44,6 +45,7 @@ export class LoginComponent implements OnDestroy {
                 this.loginForm.get('username')?.dirty)
         )
     }
+
 
     get hasPasswordRequiredError(): boolean {
         return !!(
@@ -58,7 +60,7 @@ export class LoginComponent implements OnDestroy {
     onLogin() {
         this.subscription = this.authService
             .login(this.loginForm.value as Login)
-            .subscribe()
+            .subscribe() // we have to subscribe in order to execute the observable
     }
 
     ngOnDestroy(): void {

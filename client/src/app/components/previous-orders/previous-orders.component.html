@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="container">
+        <h1>Saved Pizzas</h1>
+
+        <mat-list-item *ngFor="let pizza of pizzas$ | async">
+            <div matListItemTitle>
+                <mat-icon>local_pizza</mat-icon>
+                {{pizza.name}}
+                <button mat-button color="warn" (click)="onDelete(pizza.id)">Delete</button>
+                <mat-divider />
+            </div>
+        </mat-list-item>
+    </div>
+</div>

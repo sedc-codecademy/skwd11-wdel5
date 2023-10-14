@@ -18,3 +18,24 @@ export enum Ingredient {
     TUNA = 'TUNA',
     OLIVES = 'OLIVES',
 }
+
+export enum IngredientBE {
+    TOMATO_SAUCE,
+    MOZZARELLA,
+    HAM,
+    OREGANO,
+    GARLIC,
+    ONION,
+    MUSHROOMS,
+    PARMESAN,
+    BASIL,
+    PEPPERONI,
+    EGG,
+    CHILLI_PEPPER,
+    SOUR_CREAM,
+    BACON,
+    BLUE_CHEESE,
+    GORGONZOLA,
+    TUNA,
+    OLIVES,
+  }
